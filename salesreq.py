@@ -9,6 +9,7 @@ class salesreq(models.Model):
     def my_method(self):
         res_ids=self.search([('id','=',self.id)]).ids
         print self.ids, 'tangaraj'
+        print self.id
 
 
 # @api.one 
