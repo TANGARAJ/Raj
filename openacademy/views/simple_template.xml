@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<template id="simple_page" name="Simple Page">
+    <t t-call="website.layout">
+        <div class="container">
+            <h1>Hello World hai</h1>
+        </div>
+        <div class="oe_structure" />
+    </t>
+</template>
+
+
+<template id="dynamic_page" name="Simple Page">
+    <t t-call="website.layout">
+        <div class="container">
+            <h1><span t-field="user.name"></span></h1>
+            <h1>Length <span t-esc="len(array)"></span></h1>
+            <h1> <span t-esc="my_func('aaaaaaaaaa')"></span></h1>
+        </div>
+    </t>
+</template>
+
+<template id="assets_frontend_openacademy" inherit_id="website.assets_frontend" name="Open Academy Front-end assets">
+    <xpath expr="." position="inside">
+    
+        <link rel='stylesheet' href='/openacademy/static/src/css/openacademy.css'/>
+    </xpath>
+</template>
+
+<template id="header_link_course" inherit_id="website.footer_default" name="Course Link">
+    <xpath expr="//div[@id='info']/ul" position="inside">
+        <li><a href="/openacademy/course/">Course</a></li>
+    </xpath>
+</template>
+
+<template id="openacademy_course" name="Simple Page">
+    <t t-call="website.layout">
+        <div class="container">
+            <div class="row">
+            <t t-foreach="courses" t-as="c">
+                <div class="col-md-3">
+                    <div class="panel panel-primary course_panel">
+	                   <div class="panel-heading text-center"><strong><t t-esc="c.name"></t></strong></div>
+	                   <div class="panel-body">
+	                      <div><img class="img img-responsive shadow course_image" t-att-src="'/website/image?model=openacademy.course&amp;field=image&amp;id='+str(c.id)"></img></div>
+	                   </div>
+	                   <div class="panel-footer text-center">
+                           <p class="text-center" style="margin-bottom:0px;"><strong>Responsible </strong> </p>
+                           <p><span class="text-center" t-field="c.responsible.name"></span></p>
+                           <a class="btn btn-primary" t-attf-href="/openacademy/course/#{c.id}">See in detail</a>
+                       </div>
+                    </div>
+                </div>
+            </t>
+            </div>
+        </div>
+    </t>
+</template>
+
+<template id="openacademy_courses_detail" name="Course Detail">
+    <t t-call="website.layout">
+        <div class="container">
+            <div class="row mt32 mb32">
+                <div class="col-md-5">
+                    <img class="img img-responsive shadow mt16" t-att-src="'/website/image?model=openacademy.course&amp;field=image&amp;id='+str(course.id)"></img>
+                </div>
+                <div class="col-md-6">
+                    <h1 t-field="course.name"></h1>
+                    <h3 ><i class="fa fa-user"></i> Responsible : <span t-field="course.responsible.name"></span></h3>
+                    <h4 class="text-muted text-justify" t-field="course.description"></h4>
+                </div>
+            </div>
+        </div>
+        <div id="html" t-field="course.html"> </div>
+    </t>
+</template>
+
+<template id="session_optional"  inherit_id="openacademy.openacademy_courses_detail" name="Course Session">
+    <xpath expr="//div[@id='html']" position="before">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>Session for <t t-esc="course.name"/></h1>
+            </div>
+            <div class="col-md-12 text-center">
+                <t t-foreach="course.sessions" t-as="s">
+                    <span t-esc="s.name" class="label label-primary"></span>
+                </t>
+            </div>
+        </div>
+        
+    </xpath>
+</template>
+
+</data>
+</openerp>

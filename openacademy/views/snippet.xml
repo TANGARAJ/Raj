@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<template id="assets_snippet_openacademy" inherit_id="website.assets_frontend" name="Open Academy Snippet Front-end assets">
+    <xpath expr="." position="inside">
+    
+        <link rel='stylesheet' href='/openacademy/static/src/css/snippet.css'/>
+    </xpath>
+</template>
+
+<template id="snippet" name="Go to Courses" inherit_id="website.snippets">
+    <xpath expr="//div[@id='snippet_structure']" position="inside">
+        <div>
+            <div class="oe_snippet_thumbnail">
+                <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_image_text.png" />
+                <span class="oe_snippet_thumbnail_title">Open Academy</span>
+            </div>
+            <section class="oe_snippet_body" id="labels">
+                <div class="container">
+                    <div class="row mt16 mb16">
+                        <div class="col-md-4">
+                            <div class="dl">
+                                <div class="brand">
+                                    <h2>
+                                        Beginners
+                                    </h2>
+                                </div>
+                                <div class="discount emerald">
+                                    15%
+                                    <div class="type">
+                                        off
+                                    </div>
+                                </div>
+                                <div class="descr">
+                                    
+                                        Make your way down a <strong>Path</strong> and build specific <strong>skills</strong>,
+                                        wander through All Courses,
+                                </div>
+                                <div class="ends">
+                                    <small>
+                                        * Conditions and restrictions apply.
+                                    </small>
+                                </div>
+                                <div class="coupon midnight-blue">
+                                    <a href="/page/website.contactus" class="open-code">Get More Info</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="dl">
+                                <div class="brand">
+                                    <h2>
+                                        Intermediate
+                                    </h2>
+                                </div>
+                                <div class="discount alizarin">
+                                    20%
+                                    <div class="type">
+                                        off
+                                    </div>
+                                </div>
+                                <div class="descr">
+                                    
+                                        Make your way down a <strong>Path</strong> and build specific <strong>skills</strong>,
+                                        wander through All Courses,
+                                </div>
+                                <div class="ends">
+                                    <small>
+                                        * Conditions and restrictions apply.
+                                    </small>
+                                </div>
+                                <div class="coupon midnight-blue">
+                                    <a href="/page/website.contactus" class="open-code">Get More Info</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="dl">
+                                <div class="brand">
+                                    <h2>
+                                        Advance
+                                    </h2>
+                                </div>
+                                <div class="discount amethyst">
+                                    25%
+                                    <div class="type">
+                                        off
+                                    </div>
+                                </div>
+                                <div class="descr">
+                                    
+                                        Make your way down a <strong>Path</strong> and build specific <strong>skills</strong>,
+                                        wander through All Courses,
+                                </div>
+                                <div class="ends">
+                                    <small>
+                                        * Conditions and restrictions apply.
+                                    </small>
+                                </div>
+                                <div class="coupon midnight-blue">
+                                    <a href="/page/website.contactus" class="open-code">Get More Info</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    </xpath>
+
+</template>
+
+</data>
+</openerp>

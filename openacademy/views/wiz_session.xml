@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="wiz_session_form" model="ir.ui.view">
+            <field name="name">session wiz form</field>
+            <field name="model">wiz.openacademy.session</field>
+            <field name="arch" type="xml">
+                <form string="Session" version="7.0">
+                    <group string="Add/Edit Session">
+                        <field name="sessions" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="course"/>
+                                <field name="name"/>
+                                <field name="description"/>
+                                <field name="date"/>
+                            </tree>
+                        </field>
+                    </group>
+                <footer>
+                    <button string="Add Description" name="add_session" type="object" class="oe_highlight"/>
+                </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="session_wiz_action" model="ir.actions.act_window">
+            <field name="name">Add New Session</field>
+            <field name="res_model">wiz.openacademy.session</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="sessions_wiz_menu" parent="menu_general"
+            action="session_wiz_action"/>
+
+    </data>
+</openerp>

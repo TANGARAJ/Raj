@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="session_form" model="ir.ui.view">
+            <field name="name">session.form</field>
+            <field name="model">openacademy.session</field>
+            <field name="arch" type="xml">
+                <form string="Session" version="7.0">
+                    <header>
+                        <button string="Confirm" name="do_confirm" type="object"
+                            states="draft" />
+                        <button string="Done" name="do_done" type="object" states="confirm" />
+                        <button string="Cancel" name="do_cancel" type="object"
+                            states="confirm" />
+                        <button string="Reset" name="do_reset" type="object"
+                            states="cancel" />
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done" />
+                    </header>
+                    <sheet>
+                        <h1>
+                            <field name="name" placeholder="Session name" />
+                            <field name="upper" placeholder="Upper Case" /> 
+                        </h1><kanban>
+	                    <group>
+	                        <group string="General">
+	                            <field name="course"/>
+                                <field name="instructor"/>
+	                            <field name="active"/>
+	                        </group>
+	                        <group string="Schedule">
+	                            <field name="start_date"/>
+	                            <field name="end_date"/>
+	                            <field name="duration"/>
+	                            <field name="seats"/>
+	                            <field name="occupation"/>
+	                        </group>
+	                    </group>
+	                    <notebook>
+	                        <page string="Desctiption">
+	                            <field name="description"/>
+	                        </page>
+	                        <page string="Attendees">
+	                            <field name="attendees"/>
+	                        </page>
+	                        <page string="Course Info">
+	                            <field name="course_info"/>
+	                        </page>
+	                    </notebook>
+	                    </kanban>
+	                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="session_list" model="ir.ui.view">
+            <field name="name">session.list</field>
+            <field name="model">openacademy.session</field>
+            <field name="arch" type="xml">
+                <tree string="list">
+                    <field name="name"></field>
+                    <field name="state"></field>
+                    <field name="occupation"></field>
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="session_list_action" model="ir.actions.act_window">
+            <field name="name">Sessions</field>
+            <field name="res_model">openacademy.session</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+
+        <menuitem id="sessions_menu" parent="menu_general" action="session_list_action" />
+
+    </data>
+</openerp>

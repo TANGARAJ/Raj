@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<template id="report_session">
+			<t t-call="report.html_container">
+				<t t-foreach="docs" t-as="doc">
+					<t t-call="report.external_layout">
+						<div class="page">
+							<div class="oe_structure" />
+							<div class="text-center"><h1><span t-esc="doc.name"></span></h1></div>
+							<div class="text-center">
+							     <h3>
+							         <i class="fa fa-file-text"></i> Course: <span t-esc="doc.course.name"></span>
+							         <t t-if="doc.instructor">
+							             <i class="fa fa-user"> </i> Instructor: <span t-esc="doc.instructor.name"></span>
+							         </t>
+							     </h3>
+							     <h4>
+								     <t t-if="doc.start_date">
+								         <i class="fa fa-calendar"> </i> Date: <span t-esc="doc.start_date"></span>
+								     </t>
+								     <t t-if="doc.duration">
+								         <i class="fa fa-clock-o"> </i> Duration: <span t-esc="doc.duration"></span>
+								     </t>
+							     </h4>
+						     </div>
+						     <t t-if="doc.attendees">
+						        <h3 class="text-center"><u>Attendee List</u></h3>
+								<table class="table table-condensed">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Phone</th>
+											<th width="10%" class="text-center">Present</th>
+										</tr>
+									</thead>
+									<tbody class="sale_tbody">
+									   <tr t-foreach="doc.attendees" t-as="a">
+											<th><span t-field="a.name"/></th>
+											<th><span t-field="a.phone"/></th>
+											<th width="10%" class="text-center"><i class="fa fa-square-o"></i></th>
+									   </tr>
+									</tbody>
+							     </table>
+						     </t>
+							<div class="oe_structure" />
+						</div>
+					</t>
+				</t>
+			</t>
+		</template>
+
+		<report id="report_sessions"
+		        string="Session Report"
+                model="openacademy.session"
+			    report_type="qweb-pdf"
+			    file="openacademy.report_session"
+			    name="openacademy.report_session" />
+
+
+	</data>
+</openerp>
