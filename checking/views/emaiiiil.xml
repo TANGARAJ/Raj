@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="hfdsurtemaiiiliii_345_id">
+			<field name="name">Emailllis</field>
+			<field name="model">whatever</field>
+			<field name="arch" type="xml">
+				<form string="cons22" version="7.0">
+
+					<sheet>
+					
+							<group>
+								<field name='name' />
+								<field name='state' group="whatever.group_checking_manager" />
+								<field name='checkaccno'/>
+								 <field name="staffname"/> 
+								 <field name="checking"/>
+								 <button name="values_checking" type="object" string="call"/>
+							</group>
+							</sheet>
+				</form>
+			</field>
+		</record>
+       <record model="ir.ui.view" id="check_email_tree_view">
+			<field name="name">Emailllis</field>
+			<field name="model">whatever</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Checking">
+					<field name="name" />
+					<field name="staffname"/>
+				</tree>
+			</field>
+		</record>
+		<!-- <record id=Emaillls_inherited" model="ir.ui.view">
+			<field name="name">Emailllis</field>
+			<field name="inherit_id" ref="hfdsurtemaiiiliii_345_id" />
+			<field name="model">check.one</field>
+			<field name="arch" type="xml">
+				<data>
+					<xpath
+						expr="//group[@name='Checking Group']"
+						position="inside">
+						<field name="paperformat_id" />
+					</xpath>
+				</data>
+			</field>
+		</record> -->
+     <!-- <record id=11group_checkeddsf" model="ir.ui.view">
+			<field name="name">checkedgroups</field>
+			<field name="inherit_id" ref="checkind_idl1" />
+			<field name="model">check.one</field>
+			<field name="arch" type="xml">
+				<data>
+				<xpath expr="/form/sheet/group" position="inside">
+				<field name="paperformat_id">
+				</xpath>
+				
+				</data>
+			</field>
+		</record>  -->
+
+		<record model="ir.actions.act_window" id="dsff_email_ids98">
+			<field name="name">Emailllis</field>
+			<field name="res_model">whatever</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="emailiis" id="eamdsills_idf987" parent="ran_chtytuyeck123"
+			action="dsff_email_ids98" />
+	</data>
+</openerp>
+        
+         
+         
+         
+         
+         
+         
+         

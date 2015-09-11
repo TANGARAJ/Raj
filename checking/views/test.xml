@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openerp>
+	<data>
+	<record model="ir.ui.view" id="test_form_view_id">
+        <field name="name">test.form</field>
+        <field name="model">test</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="test">
+            <sheet>
+            <group>
+                <field name="numero"  widget="test"/>    
+                </group>
+                </sheet>
+            </form> 
+        </field>
+ </record>
+ 
+ <record model="ir.actions.act_window" id="test_action_id">
+			<field name="name">test.form</field>
+			<field name="res_model">test</field>
+			<field name="view_mode">tree,form</field>
+		</record> 
+		
+		<!-- <record model="ir.actions.act_window" id="jhjroot_accou55nt235f">
+			<field name="name">checkones</field>
+			<field name="res_model">check.one</field>
+			<field name="view_mode">tree,form</field>
+		</record> -->
+		
+	<menuitem name="test_action_id" id="testing_test_id" parent="ran_chtytuyeck123" action="test_action_id" />
+		
+	</data>
+</openerp>
+        

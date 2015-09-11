@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="checkind_idl112">
+			<field name="name">checkones</field>
+			<field name="model">check.one</field>
+			<field name="arch" type="xml">
+				<form string="CheckAccount" version="7.0">
+				<header>
+                        <button string="Confirm" name="do_confirm" type="object"
+                            states="draft" />
+                        <button string="Done" name="do_done" type="object" states="confirm" />
+                        <button string="Cancel" name="do_cancel" type="object"
+                            states="confirm" />
+                        <button string="Reset" name="do_reset" type="object"
+                            states="cancel" />
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done" />
+                    </header>
+					<sheet>
+					
+						<field  name='image142' widget="image"/>
+						<group>
+						<field name="state"/>
+						<field name='name'/>
+						<field name='accno'/>
+						</group>
+						<group  attrs="{'readonly':[('state','=','done')]}">
+						<field name='date'/>
+						<field name='Acexp'/>
+						<field name='address'/>
+						<field name='account_type' type="readonly" groups="checking.group_checking_manager"/>
+						<field name='deposite'/>
+						<field name='balance'/>
+						 <field name='actual'/>
+						<field name='withdraw'/>
+						<field  name='file123'/> 
+						<field name='customer_id'></field>
+						<field name="active"/>
+                    </group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="jhjroot_accou55nt235f">
+			<field name="name">checkones</field>
+			<field name="res_model">check.one</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		        <menuitem name="checkone-ID" id="rewrchecking_id23746v" parent="ran_chtytuyeck123" action="jhjroot_accou55nt235f" />	
+	</data>
+</openerp>
+        
+         
+         
+         
+         
+         
+         
+         

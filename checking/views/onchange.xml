@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="onchange_checking_form_id">
+			<field name="name">onchange_checking</field>
+			<field name="model">onchange.checking</field>
+			<field name="arch" type="xml">
+				<form string="onchange checking" version="7.0">
+					<sheet>
+							<group>
+								<field name='name' />
+							</group>
+							</sheet>
+				</form>
+			</field>
+		</record>
+       <record model="ir.ui.view" id="onchange_checking_tree_view">
+			<field name="name">onchange_checking</field>
+			<field name="model">onchange.checking</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="onchange.checking">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="action_onchange_id">
+			<field name="name">onchange_checking</field>
+			<field name="res_model">onchange.checking</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="checking_onchange" id="check_onchange_id" parent="ran_chtytuyeck123"
+			action="action_onchange_id" />
+	</data>
+</openerp>
+        
+         
+         
+         
+         
+         
+         
+         

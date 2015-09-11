@@ -1,0 +1,223 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* checking
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-01-14 13:14+0000\n"
+"PO-Revision-Date: 2015-01-14 13:14+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: checking
+#: field:check.one,accno:0
+msgid "Accno"
+msgstr "Accno"
+
+#. module: checking
+#: field:check.one,account_type:0
+msgid "Account type"
+msgstr "Account type"
+
+#. module: checking
+#: field:check.one,Acexp:0
+msgid "Acexp"
+msgstr "Acexp"
+
+#. module: checking
+#: field:check.one,address:0
+msgid "Address"
+msgstr "Addresssea"
+
+#. module: checking
+#: field:check.one,balance:0
+msgid "Balance"
+msgstr "Balance"
+
+#. module: checking
+#: view:check.one:checking.checkind_idl1
+msgid "CheckAccount"
+msgstr "CheckAccount"
+
+#. module: checking
+#: model:res.groups,name:checking.group_checking
+msgid "Checking Group"
+msgstr "Checking Group"
+
+#. module: checking
+#: model:ir.ui.menu,name:checking.ran_chtytuyeck123
+msgid "Checking_details"
+msgstr "Checking_details"
+
+#. module: checking
+#: selection:whatever,state:0
+msgid "Closed"
+msgstr "Closed"
+
+#. module: checking
+#: field:check.one,create_uid:0
+#: field:whatever,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: checking
+#: field:check.one,create_date:0
+#: field:whatever,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: checking
+#: field:check.one,customer_id:0
+msgid "Customer id"
+msgstr "Customer id"
+
+#. module: checking
+#: field:check.one,date:0
+msgid "Date"
+msgstr "Date"
+
+#. module: checking
+#: field:check.one,deposite:0
+msgid "Deposite"
+msgstr "Deposite"
+
+#. module: checking
+#: selection:whatever,state:0
+msgid "Draft"
+msgstr "Draft"
+
+#. module: checking
+#: model:ir.actions.act_window,name:checking.dsff_email_ids98
+msgid "Emailllis"
+msgstr "Emailllis"
+
+#. module: checking
+#: field:check.one,file123:0
+msgid "File123"
+msgstr "File123"
+
+#. module: checking
+#: model:ir.module.category,description:checking.module_category_check
+msgid "Helps you manage your shipping operations"
+msgstr "Helps you manage your shipping operations"
+
+#. module: checking
+#: field:check.one,id:0
+#: field:whatever,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: checking
+#: field:check.one,image142:0
+msgid "Image142"
+msgstr "Image142"
+
+#. module: checking
+#: field:check.one,write_uid:0
+#: field:whatever,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: checking
+#: field:check.one,write_date:0
+#: field:whatever,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: checking
+#: model:ir.model,name:checking.model_random_process
+#: model:ir.model,name:checking.model_view_levels2
+msgid "Load sample questions"
+msgstr "Load sample questions"
+
+#. module: checking
+#: model:res.groups,name:checking.group_checking_manager
+msgid "Manager"
+msgstr "マネジャ"
+
+#. module: checking
+#: selection:whatever,state:0
+msgid "Sent"
+msgstr "Sent"
+
+#. module: checking
+#: field:whatever,state:0
+msgid "State"
+msgstr "State"
+
+#. module: checking
+#: model:ir.module.category,name:checking.module_category_check
+msgid "Thang Group Category"
+msgstr "Thang Group Category"
+
+#. module: checking
+#: field:whatever,name:0
+msgid "Username"
+msgstr "Username"
+
+#. module: checking
+#: field:check.one,withdraw:0
+msgid "Withdraw"
+msgstr "Withdraw"
+
+#. module: checking
+#: model:ir.ui.menu,name:checking.checkingjg1
+msgid "checking"
+msgstr "checking"
+
+#. module: checking
+#: model:ir.ui.menu,name:checking.rewrchecking_id23746v
+msgid "checkone-ID"
+msgstr "checkone-ID"
+
+#. module: checking
+#: model:ir.actions.act_window,name:checking.jhjroot_accou55nt235f
+msgid "checkones"
+msgstr "checkones"
+
+#. module: checking
+#: view:whatever:checking.hfdsurtemaiiiliii_345_id
+msgid "cons22"
+msgstr "cons22"
+
+#. module: checking
+#: field:check.one,actual:0
+msgid "current amount"
+msgstr "current amount"
+
+#. module: checking
+#: field:check.one,name:0
+msgid "customer"
+msgstr "customer"
+
+#. module: checking
+#: field:whatever,checkaccno:0
+msgid "customer_id"
+msgstr "customer_id"
+
+#. module: checking
+#: model:ir.ui.menu,name:checking.eamdsills_idf987
+msgid "emailiis"
+msgstr "emailiis"
+
+#. module: checking
+#: selection:check.one,account_type:0
+msgid "group"
+msgstr "group"
+
+#. module: checking
+#: selection:check.one,account_type:0
+msgid "join"
+msgstr "join"
+
+#. module: checking
+#: selection:check.one,account_type:0
+msgid "personal"
+msgstr "personal"
+

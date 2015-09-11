@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <menuitem name="checking" id="checkingjg1" />
+        <menuitem name="Checking_details" id="ran_chtytuyeck123" parent="checkingjg1" />
+
+
+    </data>
+</openerp>
+
