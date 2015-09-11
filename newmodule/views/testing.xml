@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openerp>
+	<data>
+
+		<record model="ir.ui.view" id="testing_form_id">
+			<field name="name">testing_name</field>
+			<field name="model">testing</field>
+			<field name="arch" type="xml">
+				<form string="Testing" version="7.0">
+					<sheet>
+						<group>
+							<field name="many_ids" />
+							<field name="testing"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="newtesting_action_id">
+			<field name="name">testing_name</field>
+			<field name="res_model">testing</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="testingss" id="testing_id1" parent="newmodule_id_action"
+			action="newtesting_action_id" />
+	</data>
+</openerp>

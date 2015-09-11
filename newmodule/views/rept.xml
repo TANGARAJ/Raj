@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<template id="report_newmodule">
+			<t t-call="report.html_container">
+				<t t-foreach="docs" t-as="a">
+					<t t-call="report.external_layout">
+						<div class="page">
+							<div class="oe_structure" />
+							<div class="text-center">
+								<h1>
+									<span t-esc="name"></span>
+									</h1>
+								<table class="table table-condensed">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>cust_id</th>
+											<th>tname</th>
+											<th>due_amount</th>
+											<th>select</th>
+											<th>onemany</th>
+											<th>recordcke</th>
+										</tr>
+									</thead>
+									<tbody class="new_tbody">
+										<tr>
+											<th>
+												<span t-field="a.name" />
+											</th>
+											<th>
+												<span t-field="a.cust_id" />
+											</th>
+											<th>
+												<span t-field="a.tname" />
+											</th>
+											<th>
+												<span t-field="a.due_amount" />
+											</th>
+											<th>
+												<span t-field="a.select" />
+											</th>
+											<th>
+												<span t-field="a.onemany" />
+											</th>
+											<th>
+												<span t-field="a.recordcke" />
+											</th>
+                                             
+
+											 <th width="5%" class="text-center">
+												<i image="fa fa square-o"></i>
+											</th> 
+										</tr>
+									</tbody>
+									
+								</table>
+								
+								<div style="page-break-inside: avoid" >
+				                 <span t-field="a.tname" >     
+				                 <line>IT is the capital of </line>    
+				                 </span>   
+		                           </div>		
+  <span t-if="a.due_amount" t-esc="currency_text(a.amount_total, a.currency_id.name, a.partner_id.lang or 'pl_PL')"/>  	                                  
+								
+								
+							</div>
+							
+						</div>
+					</t>
+				</t>
+			</t>
+		</template>
+
+		<report id="reoport_newmodule" model="newmodule" string="checkings"
+			report_type="qweb-pdf" name="newmodule.report_newmodule" file="newmodule.report_newmodule"
+			attachment_use="True" />
+
+	</data>
+</openerp>

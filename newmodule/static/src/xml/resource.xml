@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+   <t t-extend="newmodule.message">
+        <t t-jquery="span[class=oe_reply]" t-operation="before">
+            <span class='oe_forward'><a title="Forward" class="oe_e">*</a></span>
+        </t>
+   </t>
+</templates>

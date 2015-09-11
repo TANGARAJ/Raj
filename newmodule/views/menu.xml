@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <menuitem name="newmodule" id="newmodule_id" />
+        <menuitem name="newmodule_customer" id="newmodule_id_action" parent="newmodule_id" />
+
+
+    </data>
+</openerp>

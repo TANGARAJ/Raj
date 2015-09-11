@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openerp>
+<data>
+
+<record model="ir.ui.view" id="Newmodules_form_id">
+			<field name="name">Newmodules</field>
+			<field name="model">newmodule</field>
+			<field name="arch" type="xml">
+				<form string="Telephone" version="7.0">
+				<sheet>
+				<group>
+				        <field name="name"/>
+						<field name='due_amount'/> 
+						<field name='cust_id' placeholder="type cut id" default=""/>
+						<field name="select"/>
+						<field name="onemany"/>
+						<field name="tname"/>
+						<field name="state_id"/>
+						<field name="rare"/>
+						
+						<field name="country_id"/>
+						<field name="recordcke"/>
+						<field name="hghf"/>
+						<field name="lastname"/>
+						<field name="display_name"/>
+						<field name="dob"/>
+						<field name="age"/>
+						<field name= "share" string= "Share it... :" widget= "test" />  
+						<!-- <button name="%(action_wizc_ids)d" string="Discontinud" type="action"/> -->
+						<!-- <i class="fa fa-spinner fa-spin"></i> -->
+				        <button name="room_method" type="object" string="checking" ></button>
+				        <button name="result_search" string="che" type="object" icon="fa fa-dot-circle-o fa-5x"/> 
+				        <button name="oncahnge_method" stirng="ccc" type="object"/>
+				        <button name="new_method" type="object" string="new"/>
+				         
+				        </group>
+						  
+                 </sheet>
+				</form>
+			</field>
+		</record>
+			        
+			  <record model="ir.ui.view" id="newmodule_name_tree_view">
+                <field name="name">Newmodules.tree</field>
+                <field name="model">newmodule</field>
+                <field name="type">tree</field>
+                <field name="arch" type="xml">
+                    <tree string="check newmodule colors" colors="blue:select=='area1';green:select=='area2' red:select=='area2'">
+						<field name='due_amount'/> 
+						<field name='cust_id' placeholder="type cut id" default=""/>
+						<field name="select"/>
+						<field name="onemany"/>
+						<field name="rare"/>
+						<field name="recordcke"/>
+						<field name="hghf"/>
+                    </tree>
+                </field>
+            </record>
+		<record model="ir.actions.act_window" id="Newmodules_action_id">
+			<field name="name">Newmodules</field>
+			<field name="res_model">newmodule</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<record model="ir.actions.act_window" id="newtesting_action_id">
+			<field name="name">testing_name</field>
+			<field name="res_model">testing</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		        <menuitem name="Restart" id="newmodules_id1" parent="newmodule_id_action" action="Newmodules_action_id"/>	
+	</data>
+</openerp>
