@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="subject_form_view_id">
+			<field name="name">student subject.form</field>
+			<field name="model">subject.details</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="subjects" version="7.0">
+					<sheet>
+						<group>
+						
+						<field name="tname"></field>
+						<tree editable="bottom">
+							<field name="name" />
+							<field name="enrolment_number" />
+							<field name="std" />
+							<field name="s1_tamil" on_change="onchange_total(s1_tamil, s2_english,s3_maths,s4_science,s5_social,total)"/>
+							<field name="s2_english" on_change="onchange_total(s1_tamil, s2_english,s3_maths,s4_science,s5_social,total)"/>
+							<field name="s3_maths" on_change="onchange_total(s1_tamil, s2_english,s3_maths,s4_science,s5_social,total)"/>
+							<field name="s4_science" on_change="onchange_total(s1_tamil, s2_english,s3_maths,s4_science,s5_social,total)" />
+							<field name="s5_social" on_change="onchange_total(s1_tamil, s2_english,s3_maths,s4_science,s5_social,total)"/>
+							<field name="total" on_change="onchange_total(s1_tamil, s2_english,s3_maths,s4_science,s5_social,total)"/>
+							<field name="grade" />
+							<field name="status" />
+							<field name="avg"/>
+							<!-- <field name="test_function"/>
+							<field name="totalprice"/> -->
+							</tree>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+
+		<record model="ir.actions.act_window" id="subject_action_ids">
+			<field name="name">student details</field>
+			<field name="res_model">subject.details</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem id="subject_details_id" name="Student marks" 
+			parent="parent_menu1" action="subject_action_ids" />
+	</data>
+</openerp>

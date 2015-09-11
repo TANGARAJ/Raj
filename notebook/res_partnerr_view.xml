@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="res_partner_form_view_id">
+			<field name="name">res.partner.form</field>
+			<field name="model">res.partner</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="base.view_partner_form" />
+			<field name="arch" type="xml">
+
+				<xpath
+					expr="//form/sheet/div[@class='oe_title oe_left']/div[@class='oe_edit_only']"
+					position="attributes">
+					<attribute name="invisible">1</attribute>
+
+				</xpath>
+				<xpath
+					expr="//form/sheet/div[@class='oe_title oe_left']/field[@name='parent_id']"
+					position="attributes">
+					<attribute name="invisible">1</attribute>
+
+				</xpath>
+
+
+				<xpath expr="//form/sheet/div[@class='oe_right oe_button_box']"
+					position="attributes">
+					<attribute name="invisible">1</attribute>
+
+				</xpath>
+				<xpath
+					expr="//form/sheet/div[@class='oe_title oe_left']/field[@name='category_id']"
+					position="attributes">
+					<attribute name="invisible">1</attribute>
+
+				</xpath>
+				<xpath expr="//form/sheet/notebook/page[@name='sales_purchases']"
+					position="attributes">
+					<attribute name="invisible">1</attribute>
+				</xpath>
+				<!-- <xpath expr="//form/sheet/notebook/page[@name='accounting']"
+					position="attributes">
+					<attribute name="invisible">1</attribute>
+				</xpath>
+				<xpath expr="//form/sheet/notebook/page[@name='accounting_disabled']"
+					position="attributes">
+					<attribute name="invisible">1</attribute>
+				</xpath> -->
+				<xpath
+					expr="//form/sheet/div[@class='oe_title oe_left']/field[@name='parent_id']"
+					position="before">
+					<label for="application_number" />
+					<field name="application_number" />
+				</xpath>
+				<xpath
+					expr="//form/sheet/div[@class='oe_title oe_left']/field[@name='application_number']"
+					position="after">
+					<label for="enrolment_number" />
+					<field name="enrolment_number" />
+				</xpath>
+
+
+				<xpath
+					expr="//form/sheet/div[@class='oe_title oe_left']/field[@name='enrolment_number']"
+					position="after">
+					<label for="student" />
+					<field name="student" />
+				</xpath>
+				<xpath
+					expr="//form/sheet/div[@class='oe_title oe_left']/field[@name='student']"
+					position="after">
+					<label for="standard" />
+					<field name="standard" />
+				</xpath>
+				<xpath
+					expr="//form/sheet/div[@class='oe_title oe_left']/field[@name='standard']"
+					position="after">
+					<label for="dob" />
+					<field name="dob" />
+				</xpath>
+
+			</field>
+		</record>
+		<record model="ir.ui.view" id="student_details_kanban_view">
+			<field name="name">res.partner.view</field>
+			<field name="model">res.partner</field>
+			<field name="type">kanban</field>
+			<field name="arch" type="xml">
+				<kanban quick_create="false" create="true">
+					<field name="name" />
+					<templates>
+						<t t-name="kanban-box">
+							<div class="oe_module_vignette">
+								<t t-set="installed" />
+								<img t-att-src='_s + "/supermarket/static/img/avatar.png"'
+									class="oe_kanban_image" />
+								<div class="oe_module_desc">
+									<h4>
+										<a type="open">
+											<field name="name" />
+										</a>
+									</h4>
+								</div>
+							</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
+
+		<act_window name="Student as customer" domain="[('student', '=', True)]"
+			res_model="res.partner" context="{'default_student': True}" id="action_student_form_id"
+			view_mode="tree,form,kanban" />
+
+
+		<menuitem name="Cus student" id="student_id1" parent="parent_menu1"
+			action="action_student_form_id" sequence="0" />
+	</data>
+</openerp>

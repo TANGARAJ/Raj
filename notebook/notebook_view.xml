@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="notebook_form_view">
+			<field name="name">notebook.form</field>
+			<field name="model">notebook</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Notebook" version="7.0">
+					<sheet>
+						<group>
+							<field name="name" select="1" />
+							<field name="text" />
+						</group>
+						<group col="4">
+							<field name="num1" on_change="onchange_sum(num1,num2)"/>
+							<field name="num2" on_change="onchange_sum(num1,num2)"/>
+							<field name="sum" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="notebook_tree_view">
+			<field name="name">notebook.tree</field>
+			<field name="model">notebook</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Notebook">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="action_notebook_tree_view">
+			<field name="name">notebook</field>
+			<field name="res_model">notebook</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem id="super_parent_menu1" name="Main Parent" />
+		<menuitem id="parent_menu1" name="Parent" parent="super_parent_menu1" />
+		<menuitem id="notebook_menu1" name="Notebook" parent="parent_menu1"
+			action="action_notebook_tree_view" />
+	</data>
+</openerp>
