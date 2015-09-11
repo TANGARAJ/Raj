@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="wiztest_form_id">
+			<field name="name">wiztest.form</field>
+			<field name="model">wiztest</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Wizard wiztest step" version="7.0">
+					<sheet>
+						<group>
+							<field name="name" />
+							<field name="pname" />
+							<field name="state" />
+						</group>
+					</sheet>
+					<footer>
+						<button name="action_next" string="Next" type="object" />
+						<button name="action_previous" string="Previous" type="object"
+							class="oe_highlight" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="action_wiztest_ids">
+			<field name="name">wiztest.form</field>
+			<field name="res_model">wiztest</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+	</data>
+</openerp>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+			<record model="ir.ui.view" id="enrol_tree_view">
+			<field name="name">enrolment.tree</field>
+			<field name="model">enrolment</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="enrolment" create="false" >
+							<field name="name" />
+							<field name="surname" />
+							<field name="standard"/>
+							<field name="enrolment_number" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="enrol_id_4658">
+			<field name="name">enrolment.form</field>
+			<field name="model">enrolment</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="enrolment" create="false" >
+					<sheet>
+						<group>
+							<field name="name" />
+							<field name="surname" />
+							<field name="age" />
+							<field name="Division"/>
+							<field name="standard"/>
+							<field name="dob" />
+							<field name="gender" />
+							<field name="enrolment_number" />
+							<field name="address" />
+							<field name="state_id" />
+							<field name="country_id" />
+							<field name="adm_date" />
+							<field name="nationality" />
+							<field name="contact_number" />
+							<field name="share"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="enrolling_action_student_998">
+			<field name="name">enrolment.form</field>
+			<field name="res_model">enrolment</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<!-- <menuitem id="enrol_id_5478" name="Enrolment1" parent="student_details_id"
+			action="enrolling_action_student_998"  />
+ -->
+	</data>
+</openerp>

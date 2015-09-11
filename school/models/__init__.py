@@ -1,0 +1,13 @@
+import student
+import student_attendance
+import subject
+import teachers
+import time_table
+import particulars
+import teachers_attendance
+import class_student
+import res_partner
+import hr_employee
+import tearcher_timetable
+import studentattendance
+import calen

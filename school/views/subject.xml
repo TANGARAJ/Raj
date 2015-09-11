@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="subject_form_view255">
+			<field name="name">student subject.form</field>
+			<field name="model">subject.details</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="subjects" version="7.0">
+				
+					<sheet>
+						<group>
+						<field name="tname"></field>
+							<field name="name" />
+							<field name="enrolment_number" />
+							<field name="std" />
+							<field name="s1_tamil" />
+							<field name="s2_english" />
+							<field name="s3_maths" />
+							<field name="s4_science" />
+							<field name="s5_social" />
+							<field name="total" />
+							<field name="grade" />
+							<field name="status" />
+							<field name="avg" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- <record model="ir.ui.view" id="subjects_tree_view"> <field name="name">student 
+			subject.forme</field> <field name="model">subject.details</field> <field 
+			name="type">tree</field> <field name="arch" type="xml"> <tree string="tree_string"> 
+			<field name="student_name" /> <field name="total" /> <field name="grade" 
+			/> <field name="avg" /> </tree> </field> </record> groups="school.school_groups"-->
+		<record model="ir.actions.act_window" id="subject_action_id88">
+			<field name="name">student details</field>
+			<field name="res_model">subject.details</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem id="subject_details" name="Student marks"  
+			parent="student_details_id" action="subject_action_id88" />
+	</data>
+</openerp>

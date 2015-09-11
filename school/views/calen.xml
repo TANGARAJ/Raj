@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="calen_action_form_id">
+			<field name="name">course_form</field>
+			<field name="model">course.check</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="course_form" store="False" version="7.0">
+					<Sheet>
+						<group>
+							<field name="name" />
+							<field name="attendee_ids"></field>
+							<field name="taken_seats"></field>
+							<field name="start_date" />
+							<field name="end_date" />
+							<field name="instructor_id" />
+							<field name="country_id" type="text" class="oe_inline">
+							</field>
+							<label string="6Th" colspan="4" class="oe_inline" />
+
+							<!-- <field name="c_class" style="padding: 0px 0px;" colspan="2"
+								class="oe_inline" /> -->
+						</group>
+					</Sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="session_calendar_view">
+			<field name="name">course_form</field>
+			<field name="model">course.check</field>
+			<field name="arch" type="xml">
+				<calendar string="Session Calendar" date_start="start_date"
+					date_stop="end_date" color="instructor_id">
+					<field name="name" />
+				</calendar>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="session_kanban_view">
+			<field name="name">course_form</field>
+			<field name="model">course.check</field>
+			<field name="arch" type="xml">
+				<kanban>
+					<field name="name" />
+					<templates>
+						<t t-name="kanban-box">
+							<div class="oe_product_vignette">
+								<a type="open">
+									<img class="oe_kanban_image"
+										t-att-src="kanban_image('course_check', 'image', record.id.value)" />
+								</a>
+								<div class="oe_product_desc">
+									<h4>
+										<a type="edit">
+											<field name="name"></field>
+										</a>
+									</h4>
+								</div>
+							</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="course_form_action_id4">
+			<field name="name">course_form</field>
+			<field name="res_model">course.check</field>
+			<field name="view_mode">tree,form,calendar,kanban</field>
+		</record>
+		<menuitem id="cousee_timetablesss" name="course timetable"
+			parent="student_details_id" action="course_form_action_id4" />
+	</data>
+</openerp>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="hr_employee_form78855">
+			<field name="name">hr.employee.form</field>
+			<field name="model">hr.employee</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="hr.view_employee_form" />
+			<field name="arch" type="xml">
+
+				<xpath
+					expr="//form/sheet/div[@class='oe_title']/label[@for='category_ids']"
+					position="attributes">
+					<attribute name="invisible">1</attribute>
+				</xpath>
+				<xpath
+					expr="//form/sheet/div[@class='oe_title']/field[@name='category_ids']"
+					position="attributes">
+					<attribute name="invisible">1</attribute>
+				</xpath>
+
+				<xpath
+					expr="//form/sheet/div[@class='oe_title']/label[@for='work_phone']"
+					position="before">
+
+					<label for="handling_subject" />
+					<field name="handling_subject" />
+				</xpath>
+				<xpath
+					expr="//form/sheet/div[@class='oe_title']/field[@name='handling_subject']"
+					position="after">
+
+					<label for="standards" />
+					<field name="standards" />
+				</xpath>
+				<xpath
+					expr="//form/sheet/div[@class='oe_title']/field[@name='work_phone']"
+					position="after">
+
+					<label for="staff" />
+					<field name="staff" />
+					<!-- <button type="action" string="student marks" name="%(school.subject_action_id88)d" 
+						class="oe_highlight" />           -->
+				</xpath>
+				<xpath expr="//form/sheet/div[@class='oe_title']/field[@name='staff']"
+					position="after">
+
+					<label for="qualification" />
+					<field name="qualification" />
+				</xpath>
+
+				<xpath expr="//form/sheet/notebook/page[@string='HR Settings']"
+					position="attributes">
+					<attribute name="invisible">1</attribute>
+
+				</xpath>
+				<!-- <xpath expr="//form/sheet/notebook" position="inside">
+					<page string="Time table">
+						<group>
+							<field name="timetable"></field>
+							<field name="present_day" />
+							<field name="days" />
+							<field name="hr1" />
+							<field name="hr2" />
+							<field name="hr3" />
+							<field name="hr4" />
+							<field name="hr5" />
+							<button type="object" string="timetable" name="check_timetable"></button>
+						</group>
+
+
+
+					</page>
+
+
+				</xpath> -->
+
+			</field>
+		</record>
+		<record model="ir.ui.view" id="supermarket_details_kanban_view14525">
+			<field name="name">hr.employee.view</field>
+			<field name="model">hr.employee</field>
+			<field name="type">kanban</field>
+			<field name="arch" type="xml">
+				<kanban quick_create="false" create="true">
+					<field name="name" />
+					<templates>
+						<t t-name="kanban-box">
+							<div class="oe_module_vignette">
+								<!-- <t t-set="installed" /> <img t-att-src='_s + "/supermarket/static/img/avatar.png"' 
+									class="oe_kanban_image" /> -->
+								<div class="oe_module_desc">
+									<h4>
+										<a type="open">
+											<field name="name" />
+										</a>
+									</h4>
+								</div>
+							</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
+groups="school.school_groups"
+
+		<act_window name="staff" domain="[('staff', '=', True)]"
+			res_model="hr.employee" context="{'default_staff': True}" id="action_employee_form_id45588"
+			view_mode="kanban,tree,form" />
+
+
+		<menuitem name="Employee as staff" id="employee_staff_id"
+			parent="student_details_id" action="action_employee_form_id45588"
+			sequence="2" />
+	</data>
+</openerp>

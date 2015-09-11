@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="teachers_form_view1056">
+			<field name="name">teachers</field>
+			<field name="model">teacher.detail</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="teachers">
+					<sheet>
+						<group col="4">
+							<field name="name" />
+							<field name="designation" />
+							<field name="qualification" />
+							<field name="staff_id" />
+							<field name="handling_subjects" />
+							<field name="feedback" />
+							<field name="present_day" />
+							<field name="select"/>
+							<field name="surname"/>
+						</group>
+					</sheet>
+					<sheet>
+
+						<notebook>
+							<page >
+								<group>
+									<field name="timetable"></field>
+									<field name="days" />
+									<field name="hr1" />
+									<field name="hr2" />
+									<field name="hr3" />
+									<field name="hr4" />
+									<field name="hr5" />
+									<button type="object" string="timetable" name="check_timetable"></button>
+								</group>
+							</page>
+						</notebook>
+
+					</sheet>
+				</form>
+			</field>
+		</record>
+		           <record model="ir.ui.view" id="teachers_tree_view">
+                <field name="name">teachers</field>
+                <field name="model">teacher.detail</field>
+                <field name="type">tree</field>
+                <field name="arch" type="xml">
+                    <tree string="teacher">
+                             <field name="name" />
+							<field name="designation" />
+							<field name="qualification" />
+							<field name="staff_id" />
+							<field name="select"/>
+							<field name="surname"/>
+                    </tree>
+                </field>
+            </record>
+
+		<record model="ir.actions.act_window" id="action_teachers_id56">
+			<field name="name">teachers</field>
+			<field name="res_model">teacher.detail</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+ <menuitem name="teachers" id="teacher_id76" parent="student_details_id"
+			action="action_teachers_id56" /> 
+
+	</data>
+</openerp>

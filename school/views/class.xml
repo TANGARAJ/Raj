@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+               <record model="ir.ui.view" id="class_form_id">
+                <field name="name">class student</field>
+                <field name="model">class.student</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="class student">
+                    <sheet>
+                    <group >
+                        <field name="section"/>
+                        <field name="division"/>
+                        <field name="standard"/>
+                        <field name="set_priority" widget="priority"></field>
+        
+<!-- 
+                        <field name="no_of_student"/>
+                        <field name="student"/> -->
+                      <button name="check_attendance" string="check" type="object"/>
+                        </group>
+                        </sheet>
+                    </form>
+                </field>
+            </record>
+            
+    <record model="ir.actions.act_window" id="action_class_id4568">
+			<field name="name">class student</field>
+			<field name="res_model">class.student</field>
+		    <field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- <menuitem name="class_student" id="class_id_001" parent="student_details_id"
+			action="action_class_id4568" />  -->
+    
+    
+    </data>
+</openerp>

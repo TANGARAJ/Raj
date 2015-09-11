@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<template id="reoport_school_id">
+			<t t-call="report.html_container">
+				<t t-foreach="docs" t-as="a">
+					<t t-call="report.external_layout">
+						<div class="page">
+							<div class="oe_structure" />
+							<div class="text-center">
+								<h1>
+									<span t-esc="name"></span>
+									</h1>
+								<table class="table table-condensed">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>surname</th>
+											<th>age</th>
+											<th>Division</th>
+											<th>standard</th>
+											<th>address</th>
+											<th>dob</th>
+											<th>enrolment_number </th>
+											<th>gender</th>
+											<th>adm_date</th>
+											<th>state_id </th>
+											<th>country_id</th> 
+											<th>contact_number</th>
+										</tr>
+									</thead>
+									<tbody class="new_tbody">
+										<tr>
+											<th>
+												<span t-field="a.name" />
+											</th>
+											<th>
+												<span t-field="a.surname" />
+											</th>
+											<th>
+												<span t-field="a.age" />
+											</th>
+											<th>
+												<span t-field="a.Division" />
+											</th>
+											<th>
+												<span t-field="a.standard" />
+											</th>
+											<th>
+												<span t-field="a.address" />
+											</th>
+											<th>
+												<span t-field="a.dob" />
+											</th>
+											<th>
+												<span t-field="a.enrolment_number" />
+											</th>
+											<th>
+												<span t-field="a.gender" />
+											</th>
+											<th><span t-field="a.adm_date"/>
+											</th>
+											<th>
+												<span t-field="a.state_id" />
+											</th>
+											<th><span t-field="a.country_id"></span>
+											</th>
+												<th><span t-field="a.contact_number"/>
+											</th>
+											 <th width="5%" class="text-center">
+												<i image="fa fa square-o"></i>
+											</th> 
+										</tr>
+									</tbody>
+									
+								</table>
+								<div style="page-break-inside: avoid" >
+				              <!--    <span t-field="a.name">     
+				                 <line>IT is the capital of </line>    
+				                 </span> -->   
+		                           </div>		
+		                    <!-- <span t-if="o.currency_id" t-esc="currency_text(o.amount_total, o.currency_id.name, o.partner_id.lang or 'pl_PL')"/> for calling method in python--> 	                                  
+								
+								
+							</div>
+							
+						</div>
+					</t>
+				</t>
+			</t>
+		</template>
+
+		<report id="reoport_schools" model="enrolment" string="school_report"
+			report_type="qweb-pdf" name="school.reoport_school_id" file="school.reoport_school_id"
+			attachment_use="True" />
+
+	</data>
+</openerp>

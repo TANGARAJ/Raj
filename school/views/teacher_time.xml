@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="teacher_actio_form_id">
+			<field name="name">teacher.time.form</field>
+			<field name="model">teacher.time</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="subjects" store="False" version="7.0">
+					<sheet>
+						<group col="4">
+							<field name="name"></field>
+							<field name="timetable"></field>
+							<field name="present_day" />
+							<field name="days" />
+							<field name="hr1" />
+							<field name="hr2" />
+							<field name="hr3" />
+							<field name="hr4" />
+							<field name="hr5" />
+						</group>
+						<newlinw>
+						<field name="testing" />
+							<button type="object" string="timetable" name="check_timetable"></button>
+						</newlinw>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="teacher_action_id458">
+			<field name="name">teacher.time</field>
+			<field name="res_model">teacher.time</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref="teacher_actio_form_id" />
+		</record>
+		<menuitem id="teacher_timetable" name="Teacher timetable"
+			parent="student_details_id" action="teacher_action_id458" />
+	</data>
+</openerp>

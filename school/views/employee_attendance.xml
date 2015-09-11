@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<menuitem name="Employee category" id="employee_id" parent="student_details_id"
+			action="hr.open_view_categ_form" sequence="2" />
+	</data>
+</openerp>

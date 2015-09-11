@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data> 
+    <record model="ir.ui.view" id='view_report_order_form'>
+      <field name="name">sale.order.form1</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"/>
+      <field name="arch" type="xml">
+       <!-- <form string="Sales Order" version="7.0"> -->
+          <field name="amount_total" position="after">
+            <field name="amount_words"/> 
+          </field>
+        <!-- </form>-->
+       </field>
+    </record>
+
+<record model="ir.actions.act_window" id="action_orders">
+<field name="name">Salereport1</field>
+<field name="res_model">sale.order</field>
+<field name="view_type">form</field>
+<field name="view_mode">tree,form</field>
+
+</record>
+</data>
+</openerp>

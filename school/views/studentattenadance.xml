@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<record model="ir.ui.view" id="hr_attendance_stud_id">
+			<field name="name">hr.attendance.form</field>
+			<field name="model">hr.attendance</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="hr_attendance.view_attendance_form" />
+			<field name="arch" type="xml">
+			
+			<xpath
+					expr="//form/sheet/group/field[@name='employee_id']"
+					position="after">
+				
+					<field name="student" invisible="1"/>
+				</xpath>
+					<xpath
+					expr="//form/sheet/group/field[@name='employee_id']"
+					position="before">
+				
+					<field name="student_name" attrs="{ 'invisible':[('student', '=',False)]}"/>
+				</xpath>
+				<xpath
+					expr="//form/sheet/group/field[@name='student_name']"
+					position="after">
+				
+					<field name="standard" attrs="{ 'invisible':[('student', '=',False)]}"/>
+				</xpath>
+		
+			</field>
+			</record>
+        <record id="view_attendance_who_inherit" model="ir.ui.view">
+            <field name="name">hr.attendance.inherit.tree</field>
+            <field name="model">hr.attendance</field>
+            <field eval="8" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Employee attendances">
+                <field name="student_name"/>
+                    <field name="employee_id"/>
+                    <field name="name"/>
+                    <field name="action"/>
+                </tree>
+            </field>
+        </record>
+			<act_window name="Student attendance1" domain="[('student', '=', True)]"
+			res_model="hr.attendance" context="{'default_student': True}" id="action_student_attendance_form"
+			view_mode="tree,form" />
+<!-- <groups="school.school_groups">
+ -->
+		<!-- <menuitem name="student attendance" id="student_attendance_id" parent="student_details_id"
+			action="action_student_attendance_form" />  -->
+			
+	</data>
+</openerp>

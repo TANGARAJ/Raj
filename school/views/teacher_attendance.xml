@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="tearchers_attendance_id">
+			<field name="name">teacher attendance</field>
+			<field name="model">teacher.attendance</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="teacher attendance">
+				 <header>
+                        <button string="Confirm" name="do_confirm" type="object"
+                            states="draft" />
+                        <button string="Done" name="do_done" type="object" states="confirm" />
+                        <button string="Cancel" name="do_cancel" type="object"
+                            states="confirm" />
+                        <button string="Reset" name="do_reset" type="object"
+                            states="cancel" />
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done" />
+                    </header>
+					<sheet>
+							<group col="4">
+							<field name="tname" />
+							<field name="attendance_reg" />		
+							<field name="today_date"></field>
+							<field name="present_day"/>
+							<field name="leave_day" />
+							<field name="n_absent" attrs="{ 'invisible':[('check', '=', False)]}"/>
+							<field name="n_present" attrs="{ 'invisible':[('check', '=',False)]}"/>
+							<field name="check" />
+							<field name="a" />
+							<field name="b" />
+							<field name="c" />
+							<button name="button_select_check" type="object" string="testing"/>
+							<button name="check_numberofstudent" string="check" type="object" attrs="{ 'invisible':[('check', '=', False)]}"/>
+							<button name="unlinkkkk" type="object" string="unlinkk" />
+							</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_teachers_atten_id">
+			<field name="name">teacher attendance</field>
+			<field name="res_model">teacher.attendance</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		 <menuitem id="teacher_attendance" name="teacher attendance" parent="student_details_id"
+			action="action_teachers_atten_id" />
+	</data>
+</openerp>

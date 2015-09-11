@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+               <record model="ir.ui.view" id="particulars_form_id">
+                <field name="name">particulars</field>
+                <field name="model">particulars.student</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="particulars student">
+                    <sheet>
+                    <group >
+                       <!--  <field name="name" /> -->
+                        <field name="enrolment_number"/>
+                        <field name="find_rollno"/>
+                        <field name="find_name"/>
+                        <field name="m1"/>
+                          <field name="m2"/>
+                            <field name="m3"/>
+                              <field name="m4"/>
+                                <field name="m5"/>
+                        <field name="total"/>
+                       <field name="result"/>
+                        <field name="grade"/>
+                        
+                   <!--  <button type="action" string="direct"
+							name="%(school.subject_action_id88)d" class="oe_highlight" align="center"/> -->
+                        </group>
+                        <div class="text-center">
+                        <button type="object" string="result" name="check_search"  ></button></div>
+                        <button name="result_search" string="resu" type="object"/>
+                        </sheet>
+                        
+                    </form>
+                </field>
+            </record>
+    <record model="ir.actions.act_window" id="action_particulars_id">
+			<field name="name">particulars</field>
+			<field name="res_model">particulars.student</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="particulars_form_id" />
+		</record>
+
+		<menuitem name="Result" id="particulars_id" parent="student_details_id"
+			action="action_particulars_id" />
+    
+    
+    </data>
+</openerp>

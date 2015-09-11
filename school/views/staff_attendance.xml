@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<menuitem name="Attendance" id="attendance_id_details152445" parent="student_details_id"
+			action="hr_attendance.open_view_attendance" sequence="3" />
+			<!-- <groups="school.school_groups"> -->
+	</data>
+</openerp>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <menuitem name="School" id="student_id12" />
+        <menuitem name="Student_details" id="student_details_id" parent="student_id12" />
+      
+
+    </data>
+</openerp>
+
