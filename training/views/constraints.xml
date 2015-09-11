@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="constraints_form01">
+			<field name="name">constraints</field>
+			<field name="model">constraints</field>
+			<field name="arch" type="xml">
+				<form string="constraints" version="7.0">
+					<sheet>
+						<group>
+						<field name='name'/>
+						<field name="age"/>
+						<field name="password"/>
+						</group>
+
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_constraints1141">
+			<field name="name">constraints</field>
+			<field name="res_model">constraints</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem name="constraints" id="menu_constraints11101" parent="menu_general"
+			action="action_constraints1141" />
+	</data>
+</openerp>
+        
+         
+         
+         
+         
+         
+         
+         

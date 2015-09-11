@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="sample_form10">
+			<field name="name">sample</field>
+			<field name="model">sample</field>
+			<field name="arch" type="xml">
+
+				<form string="checking_sample" version="7.0">
+					<sheet>
+						<group>
+						<field name="abcd" />
+							<field name="trainer"></field>
+							<field name="qns1"></field>
+							<field name="check_name" />
+							<!-- <field name="status"/> -->
+							<!-- <field name="anss1234" placeholder="Type your batch here!"></field>
+							<field name="current_time"></field>
+							<field name="training_ids" /> -->
+							<button type="object" name="load_questions" string="Duration"></button>
+							<button type="object" name="batch_time" string="Batch"></button>
+							<button type="object" name="searching_checking" string="ChangeBatch"></button>
+							<button type="object" name="name_checking" string="check name"></button>
+							
+							
+						</group>
+
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_sample">
+			<field name="name">sample</field>
+			<field name="res_model">sample</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem name="sample" id="menu_sample" parent="menu_general"
+			action="action_sample" />
+	</data>
+</openerp>
+        

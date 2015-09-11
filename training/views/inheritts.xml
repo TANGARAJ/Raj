@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="Inheritance_form1">
+			<field name="name">Inheritance</field>
+			<field name="model">inheritance.0</field>
+			<field name="arch" type="xml">
+
+				<form string="Inheritace" version="7.0">
+					<sheet>
+						<group>
+							<field name="name" style='width:20%%' />
+							<field name="age"></field>
+							<!-- <field name="call"/> -->
+						</group>
+
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+				<record model="ir.actions.act_window" id="action_Inheritanc14">
+			<field name="name">Inheritance</field>
+			<field name="res_model">inheritance.0</field>
+			<field name="view_mode">tree,form</field>
+
+		</record>
+		<menuitem name="Inheritance" id="menu_Inheritance11" parent="menu_general"
+			action="action_Inheritanc14" />
+	</data>
+</openerp>
+        

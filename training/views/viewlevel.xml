@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_form1">
+			<field name="name">view level</field>
+			<field name="model">viewlevel</field>
+			<field name="arch" type="xml">
+
+				<form string="Viewlevels" version="7.0">
+					<sheet>
+						<group>
+							<field name="name" style='width:20%%' />
+							<field name="age"></field>
+							<field name="check" />
+						</group>
+
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="views_id7899511111">
+			<field name="name">view level</field>
+			<field name="model">viewlevel</field>
+			<field name="inherit_id" ref="view_form1" />
+			<field name="arch" type="xml">
+				<field name='age' position='after'>
+					<field name="regis" />
+					<button name="fsfk" string="name" type="action"/>
+				</field>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="action_view10">
+			<field name="name">view level</field>
+			<field name="res_model">viewlevel</field>
+			<field name="view_mode">tree,form</field>
+
+		</record>
+		<menuitem name="view_levels" id="menu_viewlevel11" parent="menu_general"
+			action="action_view10" />
+	</data>
+</openerp>
+        

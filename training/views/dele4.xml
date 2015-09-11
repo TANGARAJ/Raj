@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="child3_form3110333">
+			<field name="name">Delegate4</field>
+			<field name="model">child3</field>
+			<field name="arch" type="xml">
+
+				<form string="child4" version="7.0">
+					<sheet>
+						<group>
+							<field name="chart" style='width:20%%' />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_44dele4472140147">
+			<field name="name">Delegate4</field>
+			<field name="res_model">child3</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem name="dele4" id="menu_dele1104758979" parent="menu_general"
+			action="action_44dele4472140147" />
+	</data>
+</openerp>
+        

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<record model="ir.ui.view" id="ran_form">
+			<field name="name">Random</field>
+			<field name="model">random.process</field>
+			<field name="arch" type="xml">
+				<form string="Ran" version="7.0">
+					<sheet>
+						<group>
+							<field name="name" />
+							<field name='trainer'></field>
+							<field name="rqns123"></field>
+							<field name="rans123" placeholder="Type your address here!"></field>
+							
+							
+						</group>
+
+						<group>
+						
+							<button type="object" string="SUBMIT" name="qns_1"></button>
+							<button type="object" string="CLEAR" name="qns_2"></button>
+							
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		
+		<record id="action_server_demo2" model="ir.actions.server">
+            <field name="name">Demo Server Action2</field>
+            <field name="condition">True</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_random_process" />
+            <field name="state">code</field>
+            <field name="code">self.example_method(cr, uid, context.get('active_ids', []), context=context)</field> 
+        </record>
+		
+		<record model="ir.values" id="action_server_example">
+            <field name="name">action_server_example</field>
+            <field name="action_id" ref="action_server_demo2" />
+            <field name="value" eval="'ir.actions.server,' + str(ref('action_server_demo'))" />
+            <field name="key">action</field>
+            <field name="model_id" ref="model_random_process" />
+            <field name="model">random.process</field>
+            <field name="key2">client_action_multi</field>
+        </record>
+
+		<record model="ir.actions.act_window" id="action_ran">
+			<field name="name">Random</field>
+			<field name="res_model">random.process</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+
+		<menuitem name="AVAILABLE COURSES" id="menu_ran" parent="menu_general"
+			action="action_ran"></menuitem>
+	</data>
+</openerp>

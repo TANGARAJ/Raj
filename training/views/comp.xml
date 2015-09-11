@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="Computing_form1">
+			<field name="name">Computing</field>
+			<field name="model">comp</field>
+			<field name="arch" type="xml">
+ <!-- <field name="fiscalyear" on_change="onchange_fiscalyear(fiscalyear)" class="oe_inline"/>
+          -->
+				<form string="Computing" version="7.0">
+					<sheet>
+						<group>
+						<field name='name'/>
+							<field name="n1"/>
+							<field name="n2"></field>
+							<field name="sum"></field>
+							<!-- <field name="total"/> -->
+						</group>
+
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_comp114">
+			<field name="name">Computing</field>
+			<field name="res_model">comp</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem name="Computing" id="menu_comp111" parent="menu_general"
+			action="action_comp114" />
+	</data>
+</openerp>
+        
+         
+         
+         
+         
+         
+         
+         

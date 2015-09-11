@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <menuitem name="Training Details" id="Training_root" />
+        <menuitem name="General" id="menu_general" parent="Training_root" />
+
+    </data>
+</openerp>
+

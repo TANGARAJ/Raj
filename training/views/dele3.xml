@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="child2_form10">
+			<field name="name">Delega</field>
+			<field name="model">child2</field>
+			<field name="arch" type="xml">
+
+				<form string="child2" version="7.0">
+					<sheet>
+						<group>
+							<field name="calling" style='width:20%%' />
+					
+													</group>
+
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_dele3140">
+			<field name="name">Delega</field>
+			<field name="res_model">child2</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem name="dele3" id="menu_dele310" parent="menu_general"
+			action="action_dele3140" />
+	</data>
+</openerp>
+        
